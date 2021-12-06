@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+    width: thin;
+}
+  
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(255, 255, 255, .2);
+}
+  
+::-webkit-scrollbar-thumb:vertical {
+    height: 30px;
+    background-color: #0e2a47;
+}
+
+html, body {
+    scrollbar-color: rgba(255, 255, 255, .2) #0e2a47;
+    scrollbar-width: thin;
+}
+
 .flex {
     display: flex;
 }

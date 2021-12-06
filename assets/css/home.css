@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Azonix";
+    src: url('../fonts/Azonix.otf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,40 +13,93 @@ html, body {
     box-sizing: border-box;
 }
 body {
-    overflow: hidden;
-}
+    font-family: 'Azonix', sans-serif;
+    font-size: 1em;
 
-/*   Matrix effect   */
+    overflow: overlay;
 
-@keyframes perspective {
-    50% {
-        perspective: 1px;
-    }
-}
-.matrix {
-    height: 100%;
-    background-color: black;
-    perspective: 100000px;
-}
-.matrix .loaded .matrix-text {
-    height: 100vh;
-}
-.matrix .loaded {
-    animation: perspective 30s 5s alternate infinite;
-}
-.matrix-text {
-    height: 0;
-    position: relative;
-    top: 0;
-    opacity: 0.8;
-    padding: 0 5px;
-    color: green;
-    text-shadow: 0 1px 2px rgba(10, 255, 10, 0.8);
+    color: white;
     letter-spacing: 2px;
-    transition: all 5s;
-    border-radius: 0 5px 5px 0;
-    flex: 1 0 auto;
-    white-space: nowrap;
-    writing-mode: vertical-lr;
+    line-height: 1.6;
+}
+.container {
+    width: 100%;
+    background-image: url(../images/Polygon\ Luminary.svg);
+    background-position-x: right;
+    background-repeat: repeat-y;
+}
+
+.no-script-warning {
+    z-index: 9999;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5em;
+
+    background-color: rgb(218, 93, 93);
+    border: 1px solid rgb(211, 28, 28);
+
+    font-family: 'sans-serif';
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header {
+    z-index: 99;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    margin: 1em;
+    width: 25em;
+    position: fixed;
+    right: 0;
     overflow: hidden;
+}
+.header > .nav {
+    margin: 1em;
+}
+.header > .nav > ul {
+    align-items: center;
+}
+.header > .nav > ul > li {
+    margin: 0 1em;
+    list-style: none;
+}
+.header > .nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.header > .nav > ul > li > a:visited {
+    color: white;
+}
+
+
+.about-me {
+    margin: 20em 0;
+    padding: 1em;
+
+    width: fit-content;
+
+    background-color: rgba(255, 255, 255, .1);  
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+.about-me > div {
+
+}
+.about-me > div > .image > img {
+    width: 10em;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.about-me > div > .about-me-text {
+    margin-top: 1em;
+    width: 40em;
 }
