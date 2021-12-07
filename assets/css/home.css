@@ -101,24 +101,24 @@ body {
     width: 40em;
 }
 
-.slider {
+.showcase-field {
     height: 100vh;
 }
-.slider > div {
+.showcase-field > div {
     transform: translateX(-50%);
 }
-.slider > div > .slide {
+.slide {
     position: relative;
     margin: 0 1em;
 }
 .slide > .slide1 {
-    width: 25vh;
+    width: 10vw;
 }
 .slide > .slide2 {
-    width: 40vh;
+    width: 20vw;
 }
 .slide > .slide3 {
-    width: 25vh;
+    width: 10vw;
 }
 .slide-hover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -143,7 +143,7 @@ body {
     margin-top: 1em;
 }
 .slide-hover > div > a {
-    border: 1px solid white;
+    border: 2px solid white;
     width: fit-content;
     padding: 0.4em;
     transition: 0.3s all ease;

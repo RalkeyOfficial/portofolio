@@ -34,15 +34,15 @@ $('.about-me').ready(function() {
 
 // fade in slide-show class from right when in view
 $(document).ready(function() {
-    //        [[---  slider animation  ---]]
-    const slider = $('.slider').children().first();
-    slider.css({
+    //      [[---  showcase animation  ---]]
+    const showcase = $('.showcase-field').children().first();
+    showcase.css({
         'margin': '0',
         opacity: '0'
     });
 
-    slider.waypoint(function() {
-        slider.animate({
+    showcase.waypoint(function() {
+        showcase.animate({
             'margin': '50%',
             opacity: '1'
         }, 2000, 'easeOutQuart');
