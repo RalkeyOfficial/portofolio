@@ -3,7 +3,7 @@
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
     $('.container').css({
-        'background-position-y': scroll / 3 + 'px'
+        'background-position-y': scroll / 2 + 'px'
     });
 });
 
