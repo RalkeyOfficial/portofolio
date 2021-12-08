@@ -4,6 +4,7 @@ setInterval(function() {
     var scroll = $(window).scrollTop();
     $('.container').css({
         'background-position-y': (scroll * 0.6) + 'px'
+        //          change it to -(scroll * num) to make it go faster than actual scroll
     });
 }, 10);
 
@@ -19,31 +20,50 @@ $('.header').ready(function() {
     }, 1000, 'easeInOutQuart');
 });
 
-// fade in about-me class from left on element load
-$('.about-me').ready(function() {
-    $('.about-me').css({
-        'margin-left': '0',
+// fade in small-about-me class from left on element load
+$('.small-about-me').children().first().ready(function() {
+    $('.small-about-me').children().first()
+    .css({
+        'left': '0',
         opacity: '0'
     });
 
-    $('.about-me').delay(1500).animate({
-        'margin-left': '15%',
+    $('.small-about-me').children().first()
+    .delay(1500).animate({
+        'left': '15%',
         opacity: '1'
     }, 2000, 'easeOutQuart');
 });
 
 // fade in slide-show class from right when in view
 $(document).ready(function() {
+    //      [[---  about me animation  ---]]
+    const aboutMe = $('.about-me').children().first();
+    aboutMe.css({
+        'left': '100%',
+        opacity: '0'
+    });
+
+    aboutMe.waypoint(function() {
+        console.log('about me waypoint triggered');
+        aboutMe.animate({
+            'left': '50%',
+            opacity: '1'
+        }, 2000, 'easeOutQuart');
+
+    }, { offset : '85%' });
+
     //      [[---  showcase animation  ---]]
     const showcase = $('.showcase-field').children().first();
     showcase.css({
-        'margin': '0',
+        'left': '0',
         opacity: '0'
     });
 
     showcase.waypoint(function() {
+        console.log('showcase waypoint triggered');
         showcase.animate({
-            'margin': '50%',
+            'left': '50%',
             opacity: '1'
         }, 2000, 'easeOutQuart');
     }, { offset: '75%' });

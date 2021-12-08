@@ -31,6 +31,7 @@ body {
 .content {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .no-script-warning {
@@ -54,7 +55,7 @@ body {
 
 
 .header {
-    z-index: 99;
+    z-index: 999;
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(5px);
     border-radius: 10px;
@@ -85,42 +86,61 @@ body {
 }
 
 
-.about-me {
+.small-about-me {
     height: 100vh;
 }
-.about-me > div {
+.small-about-me > div {
     width: fit-content;
+    left: 15%;
 }
-.about-me > div > .image > img {
+.small-about-me > div > .image > img {
     width: 10em;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.about-me > div > .about-me-text {
+.small-about-me > div > .small-about-me-text {
     margin-top: 1em;
-    width: 40em;
+    width: 40vw;
 }
 
+
+.about-me {
+    height: 100vh;
+    opacity: 1;
+}
+.about-me > div {
+    width: 60vw;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+/* yes i know this is a pain to look at */
 .showcase-field {
     height: 100vh;
 }
 .showcase-field > div {
     transform: translateX(-50%);
+    left: 50%;
 }
-.slide {
+.showcase-item {
     position: relative;
     margin: 0 1em;
+    height: fit-content;
 }
-.slide > .slide1 {
-    width: 10vw;
+.showcase-item > * {
+    border-radius: 10px;
 }
-.slide > .slide2 {
+.showcase-item > .item1 {
     width: 20vw;
 }
-.slide > .slide3 {
-    width: 10vw;
+.showcase-item > .item2 {
+    width: 30vw;
 }
-.slide-hover {
+.showcase-item > .item3 {
+    width: 20vw;
+}
+.showcase-hover {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     border-radius: 10px;
@@ -132,23 +152,23 @@ body {
     opacity: 0;
     transition: 0.3s all ease;
 }
-.slide-hover:hover {
+.showcase-hover:hover {
     opacity: 1;
 }
-.slide-hover > div > * {
+.showcase-hover > div > * {
     text-align: center;
     color: white;
     text-decoration: none;
     font-weight: bold;
     margin-top: 1em;
 }
-.slide-hover > div > a {
+.showcase-hover > div > a {
     border: 2px solid white;
     width: fit-content;
     padding: 0.4em;
     transition: 0.3s all ease;
 }
-.slide-hover > div > a:hover {
+.showcase-hover > div > a:hover {
     background-color: white;
     color: black;
 }

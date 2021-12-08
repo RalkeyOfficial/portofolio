@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 ::-webkit-scrollbar {
     width: thin;
 }
@@ -46,6 +48,18 @@ html, body {
 
 .text-center {
     text-align: center;
+}
+
+.pos-relative {
+    position: relative;
+}
+.pos-absolute {
+    position: absolute;
+}
+
+.text-normal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
 }
 
 .glass-bg {

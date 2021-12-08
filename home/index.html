@@ -29,35 +29,59 @@
         <div class="header flex-hor-center flex-ver-center">
             <div class="nav">
                 <ul class="flex-row">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#showcase">Projects</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="content flex-column">
 
-            <div class="about-me flex-ver-center">
-                <div class="glass-bg">
+            <div class="small-about-me flex-ver-center pos-relative" id="home">
+                <div class="glass-bg pos-absolute">
                     <div class="image">
                         <img src="../assets/images/me.png" alt="">
                     </div>
-                    <p class="about-me-text">
+                    <p class="small-about-me-text text-normal">
                         I am Thijn Douwma <br>
-                        I am a web developer and designer based in the Netherlands. I have a passion for creating beautiful and functional websites.
+                        I am a web developer based in the Netherlands. I have a passion for creating beautiful and functional websites.
                     </p>
                 </div>
             </div>
 
-            <div class="showcase-field flex-ver-center">
-                <div class="flex-column flex-ver-center">
+            <div class="about-me flex-ver-center pos-relative" id="about-me">
+                <div class="pos-absolute">
+                    <h1>About me</h1>
+                    <p class="glass-bg text-normal">
+                        My name is Thijn Douwma. <br>
+                        I am a 18 year old student learning web development. <br>
+                        I have a passion of making functional websites and applications. <br>
+                        I love to persue a challenge and learn new things. <br>
+                        In my free time I like to play video games, watch anime, learn coding and graphical design. <br>
+                        I am currently looking for a job as a web developer.
+                    </p>
+                </div>
+            </div>
+
+            <div class="showcase-field flex-ver-center pos-relative" id="showcase">
+                <div class="flex-column pos-absolute">
                     <h1>My top 3 projects</h1>
-                    <div class="flex-row">
+                    <div class="flex-row flex-ver-center">
                         
-                        <div class="slide glass-bg">
-                            <img src="../assets/images/slide1.png" alt="slide1" class="slide1">
-                            <div class="slide-hover flex-ver-center flex-hor-center">
+                        <div class="showcase-item glass-bg">
+                            <img src="../assets/images/slide1.png" alt="slide1" class="item1">
+                            <div class="showcase-hover flex-ver-center flex-hor-center">
+                                <div class="flex-column flex-ver-center">
+                                    <h2>ROC-DEV</h2>
+                                    <a href="">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="showcase-item glass-bg">
+                            <img src="../assets/images/slide2.png" alt="slide2" class="item2">
+                            <div class="showcase-hover flex-ver-center flex-hor-center">
                                 <div class="flex-column flex-ver-center">
                                     <h2>Discord Blue Hook</h2>
                                     <a href="">Read more</a>
@@ -65,21 +89,11 @@
                             </div>
                         </div>
 
-                        <div class="slide glass-bg">
-                            <img src="../assets/images/slide2.png" alt="slide2" class="slide2">
-                            <div class="slide-hover flex-ver-center flex-hor-center">
+                        <div class="showcase-item glass-bg">
+                            <img src="../assets/images/slide3.png" alt="slide3" class="item3">
+                            <div class="showcase-hover flex-ver-center flex-hor-center">
                                 <div class="flex-column flex-ver-center">
-                                    <h2>Discord Blue Hook</h2>
-                                    <a href="">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide glass-bg">
-                            <img src="../assets/images/slide3.png" alt="slide3" class="slide3">
-                            <div class="slide-hover flex-ver-center flex-hor-center">
-                                <div class="flex-column flex-ver-center">
-                                    <h2>Discord Blue Hook</h2>
+                                    <h2>empty</h2>
                                     <a href="">Read more</a>
                                 </div>
                             </div>
