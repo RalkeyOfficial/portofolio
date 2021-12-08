@@ -16,7 +16,7 @@ $('.header').ready(function() {
     });
 
     $('.header').delay(500).animate({
-        width: '25em'
+        width: '45em'
     }, 1000, 'easeInOutQuart');
 });
 
@@ -45,7 +45,6 @@ $(document).ready(function() {
     });
 
     aboutMe.waypoint(function() {
-        console.log('about me waypoint triggered');
         aboutMe.animate({
             'left': '50%',
             opacity: '1'
@@ -61,10 +60,24 @@ $(document).ready(function() {
     });
 
     showcase.waypoint(function() {
-        console.log('showcase waypoint triggered');
         showcase.animate({
             'left': '50%',
             opacity: '1'
         }, 2000, 'easeOutQuart');
     }, { offset: '75%' });
+
+    //      [[---  languages animation  ---]]
+    const languages = $('.languages').children().first();
+    languages.css({
+        'left': '100%',
+        opacity: '0'
+    });
+
+    languages.waypoint(function() {
+        languages.animate({
+            'left': '50%',
+            opacity: '1'
+        }, 2000, 'easeOutQuart');
+
+    }, { offset : '85%' });
 });
