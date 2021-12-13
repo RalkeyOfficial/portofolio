@@ -24,9 +24,14 @@ body {
 }
 .container {
     width: 100%;
-    background-image: url(../images/background-images/Polygon\ Luminary1.svg);
+    background-image: url('../images/background-images/Polygon Luminary1.svg');
     background-position-x: right;
     background-repeat: repeat-y;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .content {
     width: 100%;
@@ -185,4 +190,6 @@ body {
 }
 .languages > div > div > ul {
     margin-left: 1em;
+    overflow: hidden;
+    height: 100%;
 }
