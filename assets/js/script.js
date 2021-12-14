@@ -31,3 +31,75 @@ $('img').click(function() {
 $('.img-viewer').click(function() {
     $(this).addClass('hidden');
 });
+
+
+// secret button effects
+$('#secret-button').removeClass('hidden');
+$('#secret-button').click(function() {
+
+    // give rotate classes to fields
+    $('.small-about-me').toggleClass('rotateLeft');
+    $('.about-me').toggleClass('rotateRight');
+    $('.showcase-field').toggleClass('rotateLeft');
+    $('.languages').toggleClass('rotateRight');
+
+    /* 
+        i feel like an idiot for even trying to do this with javascript
+    */
+
+});
+
+// once word has been typed out, launch confetti
+const keys = ['a', 'w', 'e', 's', 'o', 'm', 'e'];
+const wordLength = keys.length;
+let currentWord = 0;
+
+$(document).keypress(function(e) {
+    if (e.keyCode !== keys[currentWord].charCodeAt(0)){
+        currentWord = 0;
+        return;
+    }
+    
+    currentWord++;
+
+    if (currentWord === wordLength) {
+        launchConfetti();
+        currentWord = 0;
+    }
+});
+
+function launchConfetti() {
+    var count = 200;
+    var defaults = {
+        origin: { y: 1 }
+    };
+
+    function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio)
+        }));
+    }
+
+    fire(0.25, {
+        spread: 26,
+        startVelocity: 55,
+    });
+    fire(0.2, {
+        spread: 60,
+    });
+    fire(0.35, {
+        spread: 100,
+        decay: 0.91,
+        scalar: 0.8
+    });
+    fire(0.1, {
+        spread: 120,
+        startVelocity: 25,
+        decay: 0.92,
+        scalar: 1.2
+    });
+    fire(0.1, {
+        spread: 120,
+        startVelocity: 45,
+    });
+}

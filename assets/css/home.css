@@ -193,3 +193,57 @@ body {
     overflow: hidden;
     height: 100%;
 }
+
+
+.rotateLeft {
+    animation: rotateLeft 6s ease-in-out infinite;
+}
+.rotateRight {
+    animation: rotateRight 6s ease-in-out infinite;
+}
+
+@keyframes rotateLeft {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+@keyframes rotateRight {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+
+footer {
+    text-align: center;
+    color: rgba(255, 255, 255, .4);
+    padding: 1em;
+    background-color: rgb(50, 50, 50);
+    position: relative;
+}
+
+.secret-button {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    background-color: 0;
+    background: none;
+	color: rgba(255, 255, 255, .1);
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
