@@ -3,7 +3,6 @@ let fileUrl = "../assets/images/background-images/"
 
 let validImages = [];
 
-
 $.get(fileUrl, function(data) {
     let filteredData = $('div', data)['prevObject'].find('li').find('span.name').filter(function() {
         // filter out all the files that don't end in .svg
@@ -59,7 +58,7 @@ $(document).keypress(function(e) {
         currentWord = 0;
         return;
     }
-    
+
     currentWord++;
 
     if (currentWord === wordLength) {
