@@ -57,6 +57,10 @@ html, body {
     position: absolute;
 }
 
+.fit-content {
+    width: fit-content;
+}
+
 .text-normal {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2em;

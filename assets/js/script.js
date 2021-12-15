@@ -23,6 +23,8 @@ $.get(fileUrl, function(data) {
 
 // when clicking on an image open image viewer
 $('img').click(function() {
+    if ($(this).attr('alt') == 'ignore-viewer') return;
+
     let imageUrl = $(this).attr('src');
     $('.img-viewer').removeClass('hidden');
     $('#img-viewer-image').attr('src', imageUrl);
@@ -47,6 +49,19 @@ $('#secret-button').click(function() {
     */
 
 });
+
+
+// once clicked on the email-open-button widen the email element
+$('#email-open-button').click(function() {
+    $(this).toggleClass('emailWiden');
+    $(this).toggleClass('emailUnwiden');
+});
+
+$('#discord-open-button').click(function() {
+    $(this).toggleClass('discordWiden');
+    $(this).toggleClass('discordUnwiden');
+});
+
 
 // once word has been typed out, launch confetti
 const keys = ['a', 'w', 'e', 's', 'o', 'm', 'e'];
