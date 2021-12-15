@@ -271,19 +271,28 @@ footer > div > * {
     color: white;
 }
 
+
+/*
+    [@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@]
+    [@]                      FOOTER OPEN ANIMATIONS                      [@]
+    [@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@]
+*/
+
+/*
+    >>>>>>> email opening
+*/
 #email-open-button > img {
     margin: 1em;
     width: 2em;
 }
 
-
 .emailWiden {
-    animation: emailWiden 2s ease-in-out;
+    animation: emailWiden 1s ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 .emailUnwiden {
-    animation: emailUnwiden 2s ease-in-out;
+    animation: emailUnwiden 1s ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -305,19 +314,21 @@ footer > div > * {
 }
 
 
+/*
+    >>>>>>> discord opening
+*/
 #discord-open-button > img {
     margin: 1em;
     width: 2em;
 }
 
-
 .discordWiden {
-    animation: discordWiden 2s ease-in-out;
+    animation: discordWiden 1s ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 .discordUnwiden {
-    animation: discordUnwiden 2s ease-in-out;
+    animation: discordUnwiden 1s ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -337,6 +348,8 @@ footer > div > * {
         width: 4em;
     }
 }
+
+
 
 .secret-button {
     position: absolute;
