@@ -77,15 +77,17 @@ $(document).keypress(function(e) {
     currentWord++;
 
     if (currentWord === wordLength) {
-        launchConfetti();
+        launchConfetti(0.2);
+        launchConfetti(0.5);
+        launchConfetti(0.8);
         currentWord = 0;
     }
 });
 
-function launchConfetti() {
+function launchConfetti(x = 0.5) {
     var count = 200;
     var defaults = {
-        origin: { y: 1 }
+        origin: { x: x, y: 1 }
     };
 
     function fire(particleRatio, opts) {

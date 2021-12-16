@@ -271,6 +271,11 @@ footer > div > * {
     color: white;
 }
 
+.social-media > * > img {
+    margin: 1em;
+    width: 2em;
+}
+
 
 /*
     [@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@][@]
@@ -281,10 +286,7 @@ footer > div > * {
 /*
     >>>>>>> email opening
 */
-#email-open-button > img {
-    margin: 1em;
-    width: 2em;
-}
+
 
 .emailWiden {
     animation: emailWiden 1s ease-in-out;
@@ -317,10 +319,6 @@ footer > div > * {
 /*
     >>>>>>> discord opening
 */
-#discord-open-button > img {
-    margin: 1em;
-    width: 2em;
-}
 
 .discordWiden {
     animation: discordWiden 1s ease-in-out;
