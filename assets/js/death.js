@@ -44,22 +44,24 @@ function trueDeath() {
 
 function openWindow() {
     var data = `
-        <img src="https://c.tenor.com/UyujgSp5DHwAAAAC/skull-human-skull.gif" style="width=100%;"/>
+        <img src="https://c.tenor.com/UyujgSp5DHwAAAAC/skull-human-skull.gif" style="width=100%; margin:0;"/>
 
         <script>
             console.log('opened window');
 
-            window.Data = window.opener.Data;
-
-            window.open('', null, 'width=510,height=370')
+            window.open('', null, 'width=520,height=400')
                 .document.write(window.opener.Data);
+            
             console.log(window.opener.Data);
         </script>
     `;
 
     window.Data = data;
 
-    window.open('', 'w1', 'width=510,height=370')
+    window.open('', 'w1', 'width=520,height=400')
         .document.write(data);
+
+    // read this once you have some motivation
+    // https://stackoverflow.com/questions/29909927/inject-an-opened-window-with-script
 
 }
