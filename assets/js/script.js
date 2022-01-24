@@ -64,9 +64,10 @@ $('#discord-open-button').click(function() {
 
 
 // once word has been typed out, launch confetti
-const keys = ['a', 'w', 'e', 's', 'o', 'm', 'e'];
+const keys = 'awesome'.split('');
 const wordLength = keys.length;
 let currentWord = 0;
+
 
 $(document).keypress(function(e) {
     if (e.keyCode !== keys[currentWord].charCodeAt(0)){

@@ -4,7 +4,7 @@ let deathCurrentNumber = 0;
 
 $(document).keypress(function(e) {
     if (e.keyCode !== death[deathCurrentNumber].charCodeAt(0)){
-        currentWord = 0;
+        deathCurrentNumber = 0;
         return;
     }
 
@@ -43,20 +43,23 @@ function trueDeath() {
 
 
 function openWindow() {
-    const data = `
+    var data = `
         <img src="https://c.tenor.com/UyujgSp5DHwAAAAC/skull-human-skull.gif" style="width=100%;"/>
 
-        <script defer>
-            const data = window.opener.Data;
+        <script>
+            console.log('opened window');
 
-            window.open('', null, 'width=500,height=370')
-                .document.write(data);
+            window.Data = window.opener.Data;
+
+            window.open('', null, 'width=510,height=370')
+                .document.write(window.opener.Data);
+            console.log(window.opener.Data);
         </script>
     `;
 
     window.Data = data;
 
-    window.open('', 'w1', 'width=500,height=370')
+    window.open('', 'w1', 'width=510,height=370')
         .document.write(data);
 
 }
