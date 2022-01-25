@@ -14,7 +14,7 @@ $('.header').css({
     width: '0'
 });
 $('.header').delay(500).animate({
-    width: '45em'
+    width: '40em'
 }, 1000, 'easeInOutQuart');
 
 

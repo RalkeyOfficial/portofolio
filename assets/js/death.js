@@ -34,7 +34,7 @@ function trueDeath() {
         for (let i = 0; i < random2; i++)      text += '💀';
 
         console.log(text,
-            'font-weight:bold; background-color:red; color:black; font-size:2em; text-align:center;');
+            'font-weight:bold; background-color:red; color:black; font-size:1.5em; text-align:center;');
     }, 10);
 
     openWindow();
