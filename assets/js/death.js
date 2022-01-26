@@ -19,7 +19,7 @@ function trueDeath() {
 
     setInterval(function() {
         const reverseExclemationMark = '¡';
-        const amount = 2;
+        const amount = 4;
         const random1 = Math.floor(Math.random() * amount) + 1;
         const random2 = Math.floor(Math.random() * amount) + 1;
 
@@ -34,7 +34,7 @@ function trueDeath() {
         for (let i = 0; i < random2; i++)      text += '💀';
 
         console.log(text,
-            'font-weight:bold; background-color:red; color:black; font-size:1.5em; text-align:center;');
+            'font-weight:bold; background-color:red; color:black; font-size:1.8em; text-align:center;');
     }, 10);
 
     openWindow();
