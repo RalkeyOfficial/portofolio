@@ -21,3 +21,18 @@
     display: flex;
     justify-content: center;
 }
+
+noscript {
+    z-index: 99999;
+    position: fixed;
+    width: 100%;
+}
+.noscript-warning {
+    background-color: rgb(255, 93, 93);
+    border: 1px solid rgb(255, 45, 45);
+    color: black;
+
+    font-size: larger;
+
+    padding: 1em;
+}
