@@ -43,6 +43,7 @@ body {
     height: 100%;
     color: white;
     background-color: #1E1E1E;
+    font-size: 18px;
 }
 
 header {
@@ -52,7 +53,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
-    padding: 1em;
+    padding: 0.5em 1em 0 1em;
     background-color: #1E1E1E;
 }
 header::after {
@@ -60,7 +61,7 @@ header::after {
     display: block;
     position: absolute;
     height: 1px;
-    width: 85%;
+    width: 92%;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -68,10 +69,53 @@ header::after {
     opacity: 0.5;
 }
 
-.nav {
+.menuToggle {
     margin-left: auto;
 }
 
-.burger > img {
+.menuToggle input[type="checkbox"] {
+    display: none;
+}
+
+.menuToggle input[type="checkbox"] + label {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    z-index: 3;
+    cursor: pointer;
+    background-image: url("../images/icons8-menu.svg");
+    background-size: contain;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(275deg) brightness(101%) contrast(102%);
+}
+
+.menuToggle input[type="checkbox"]:checked + label {
+    background-image: url("../images/icons8-close.svg");
+    filter: invert(0%) sepia(97%) saturate(21%) hue-rotate(180deg) brightness(92%) contrast(99%);
+}
+
+.menuToggle nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100vh;
+    padding-top: 8em;
+    background-color: #e4e4e4ad;
+    z-index: 2;
+    transform: translateX(100%);
+}
+
+.menuToggle input[type="checkbox"]:checked + nav {
+    transform: translateX(0%);
+}
+
+.menuToggle nav ul {
+    list-style: none;
+    padding: 0;
+}
+.menuToggle nav ul li {
+    padding-bottom: 1em;
+}
+.menuToggle nav ul li a {
+    color: #1E1E1E;
 }

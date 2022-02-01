@@ -31,12 +31,17 @@
     <header class="flex-row">
         <div class="user-logo">
             <h1>Thijn Douwma</h1>
-            <h2>Web developer</h2>
+            <h3>Web developer</h3>
         </div>
-        <div class="nav flex-ver-center">
-            <div class="burger">
-                <img src="../assets/images/icons8-menu.svg" alt="">
-            </div>
+        <div class="menuToggle flex-ver-center">
+            <input type="checkbox" name="hamburger-menu" id="hamburger-menu">
+            <label for="hamburger-menu"></label>
+            <nav class="flex-hor-center">
+                <ul>
+                    <li><a href="../projects">projects</a></li>
+                    <li><a href="../contact">contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
