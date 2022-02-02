@@ -53,7 +53,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
-    padding: 0.5em 1em 0 1em;
+    padding: 1em;
     background-color: #1E1E1E;
 }
 header::after {
@@ -61,57 +61,110 @@ header::after {
     display: block;
     position: absolute;
     height: 1px;
-    width: 92%;
+    width: 75%;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: gray;
+    left: 0;
+    background: linear-gradient(90deg, rgba(128,128,128,1) 0%, rgba(255,255,255,0) 100%);
     opacity: 0.5;
 }
 
+/* 
+    =============================
+        Menu
+    =============================
+*/
 .menuToggle {
-    margin-left: auto;
+    margin: 0.5em 0.5em 0 auto
 }
 
-.menuToggle input[type="checkbox"] {
+#hamburger-menu {
     display: none;
 }
 
-.menuToggle input[type="checkbox"] + label {
-    display: inline-block;
-    height: 32px;
-    width: 32px;
-    z-index: 3;
+#menu-button {
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    z-index: 4;
     cursor: pointer;
-    background-image: url("../images/icons8-menu.svg");
-    background-size: contain;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(275deg) brightness(101%) contrast(102%);
+    transform: translateX(-100%);
 }
 
-.menuToggle input[type="checkbox"]:checked + label {
-    background-image: url("../images/icons8-close.svg");
-    filter: invert(0%) sepia(97%) saturate(21%) hue-rotate(180deg) brightness(92%) contrast(99%);
+#hamburger-menu + label#menu-visual {
+    display: inline-block;
+    position: relative;
+    height: 2px;
+    width: 1.5em;
+    z-index: 3;
+    background-color: white;
+    border-radius: 0.2em;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+#hamburger-menu + label#menu-visual::before,
+#hamburger-menu + label#menu-visual::after {
+    content: "";
+    height: 2px;
+    width: 1.5em;
+    z-index: 3;
+    background-color: white;
+    position: absolute;
+    display: block;
+    border-radius: 0.2em;
+    transition: all 0.2s ease-in-out;
+}
+#hamburger-menu + label#menu-visual::before {
+    top: -450%;
+    left: 0;
+    transform-origin: left top;
+}
+#hamburger-menu + label#menu-visual::after {
+    top: 450%;
+    left: 0;
+    transform-origin: left bottom;
+}
+
+#hamburger-menu:checked + label#menu-visual {
+    background-color: rgba(255, 255, 255, 0);
+}
+#hamburger-menu:checked + label#menu-visual::before {
+    background-color: #1E1E1E;
+    transform: rotateZ(45deg);
+    left: 5px;
+}
+#hamburger-menu:checked + label#menu-visual::after {
+    background-color: #1E1E1E;
+    transform: rotateZ(-45deg);
+    left: 5px;
 }
 
 .menuToggle nav {
     position: absolute;
     top: 0;
     right: 0;
-    width: 45%;
     height: 100vh;
-    padding-top: 8em;
-    background-color: #e4e4e4ad;
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 2;
+    transition: all 0.5s ease-in-out;
     transform: translateX(100%);
 }
 
-.menuToggle input[type="checkbox"]:checked + nav {
+/* 
+    the "+" thing in css goes through the html like a folder
+    since my html is 
+        #hamburger-menu 
+        label 
+        nav
+    i need to put a "+ label" before the "+ nav"
+*/
+#hamburger-menu:checked ~ nav {
     transform: translateX(0%);
 }
 
 .menuToggle nav ul {
     list-style: none;
     padding: 0;
+    margin: 6em 4em;
 }
 .menuToggle nav ul li {
     padding-bottom: 1em;
@@ -119,3 +172,5 @@ header::after {
 .menuToggle nav ul li a {
     color: #1E1E1E;
 }
+
+
