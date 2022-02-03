@@ -44,6 +44,7 @@ body {
     color: white;
     background-color: #1E1E1E;
     font-size: 18px;
+    font-weight: bold;
 }
 
 header {
@@ -74,7 +75,7 @@ header::after {
     =============================
 */
 .menuToggle {
-    margin: 0.5em 0.5em 0 auto
+    margin: 0.5em 0.5em 0 auto;
 }
 
 #hamburger-menu {
@@ -143,7 +144,7 @@ header::after {
     top: 0;
     right: 0;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(199, 199, 199, 0.8);
     z-index: 2;
     transition: all 0.5s ease-in-out;
     transform: translateX(100%);
@@ -155,7 +156,7 @@ header::after {
         #hamburger-menu 
         label 
         nav
-    i need to put a "+ label" before the "+ nav"
+    to avoid using "+" too much i can use "~" to quicly get the next nav
 */
 #hamburger-menu:checked ~ nav {
     transform: translateX(0%);
@@ -174,3 +175,10 @@ header::after {
 }
 
 
+.content {
+    height: 100%;
+    padding: 1em;
+}
+.small-about-me {
+    padding: 2em;
+}
