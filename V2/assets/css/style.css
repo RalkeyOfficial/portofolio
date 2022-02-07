@@ -88,7 +88,7 @@ header::after {
     position: absolute;
     z-index: 4;
     cursor: pointer;
-    transform: translateX(-100%);
+    transform: translate(-100%, 20%);
 }
 
 #hamburger-menu + label#menu-visual {
