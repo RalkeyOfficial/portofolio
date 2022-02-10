@@ -19,7 +19,7 @@
 
 .ttt::after {
   content : "\0020";
-  animation: pulse 1s infinite;
+  animation: pulse 0.8s infinite;
   color: transparent;
   border-right: 3px solid rgb(255, 255, 255);
   margin-left: 4px;
@@ -29,7 +29,7 @@
   0% {
      border-right: 3px solid  rgb(255, 255, 255);
   }
-  70% {
+  50% {
      border-right: 3px solid  transparent;
   }
   100% {

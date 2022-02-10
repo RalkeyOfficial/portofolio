@@ -31,6 +31,11 @@
     font-weight: bold;
 }
 
+:root {
+    --hamburger-color: white;
+    --hamburger-phase2-color: #1E1E1E;
+}
+
 * {
     margin: 0;
     z-index: 0;
@@ -59,14 +64,13 @@ header {
 }
 header::after {
     content: "";
-    display: block;
     position: absolute;
     height: 1px;
-    width: 75%;
+    width: 100%;
     bottom: 0;
     left: 0;
-    background: linear-gradient(90deg, rgba(128,128,128,1) 0%, rgba(255,255,255,0) 100%);
-    opacity: 0.5;
+    z-index: 1;
+    background-color: rgb(128,128,128);
 }
 
 /* 
@@ -97,7 +101,7 @@ header::after {
     height: 2px;
     width: 1.5em;
     z-index: 3;
-    background-color: white;
+    background-color: var(--hamburger-color);
     border-radius: 0.2em;
     opacity: 1;
     transition: all 0.2s ease-in-out;
@@ -108,7 +112,7 @@ header::after {
     height: 2px;
     width: 1.5em;
     z-index: 3;
-    background-color: white;
+    background-color: var(--hamburger-color);
     position: absolute;
     display: block;
     border-radius: 0.2em;
@@ -129,56 +133,110 @@ header::after {
     background-color: rgba(255, 255, 255, 0);
 }
 #hamburger-menu:checked + label#menu-visual::before {
-    background-color: #1E1E1E;
+    background-color: var(--hamburger-phase2-color);
     transform: rotateZ(45deg);
     left: 5px;
 }
 #hamburger-menu:checked + label#menu-visual::after {
-    background-color: #1E1E1E;
+    background-color: var(--hamburger-phase2-color);
     transform: rotateZ(-45deg);
     left: 5px;
+}
+
+#hamburger-menu ~ .balls {
+    position: absolute;
+    transform: translateY(-75%);
+}
+.balls > * {
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 0;
+    height: 0;
+    transition: all 0.2s ease-in-out;
+}
+.balls > .ball1 {
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    background-color: rgb(205,148,207);
+    border-radius: 50%;
+    z-index: 5;
+}
+.balls > .ball2 {
+    background-color: rgb(199,84,203);
+    border-radius: 50%;
+    z-index: 6;
+}
+.balls > .ball3 {
+    background-color: rgb(193, 21, 199);
+    border-radius: 50%;
+    z-index: 7;
+}
+
+#hamburger-menu:checked ~ .balls > .ball1 {
+    width: 200vw;
+    height: 200vh;
 }
 
 .menuToggle nav {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
-    background-color: rgba(199, 199, 199, 0.8);
+    margin: 1em;
     z-index: 2;
+    
+    transform-origin: right;
     transition: all 0.5s ease-in-out;
-    transform: translateX(100%);
 }
 
 /* 
     the "+" thing in css goes through the html like a folder
     since my html is 
         #hamburger-menu 
+        +
         label 
+        +
         nav
     to avoid using "+" too much i can use "~" to quicly get the next nav
 */
 #hamburger-menu:checked ~ nav {
-    transform: translateX(0%);
+    
 }
 
 .menuToggle nav ul {
     list-style: none;
-    padding: 0;
-    margin: 6em 4em;
 }
-.menuToggle nav ul li {
-    padding-bottom: 1em;
+.menuToggle nav ul * {
+    padding: 0.5em 1em;
 }
 .menuToggle nav ul li a {
-    color: #1E1E1E;
+    color: white;
 }
 
 
 .content {
     height: 100%;
     padding: 1em;
+    flex-direction: column;
 }
+
 .small-about-me {
     padding: 2em;
+}
+
+.my-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.my-photo img {
+    width: 75%;
+    height: auto;
+    border-radius: 24px;
+    display: block;
 }
