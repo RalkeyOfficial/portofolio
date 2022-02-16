@@ -56,15 +56,11 @@ body {
 header {
     width: 100%;
     height: fit-content;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
     padding: 1em;
-    background-color: #111111;
-}
-header::after:has(> .menuToggle > #hamburger-menu:checked) {
-    display: none;
 }
 
 .user-logo {
@@ -78,12 +74,7 @@ header::after:has(> .menuToggle > #hamburger-menu:checked) {
         2px 2px 1px #919191,
         3px 3px 1px #919191,
         4px 4px 1px #919191,
-        5px 5px 1px #919191,
-    /* blur effect. change second property for vertical alignment */
-        5px 10px 6px rgba(230, 230, 230, 0.4),
-        5px 14px 10px rgba(230, 230, 230,0.2),
-        5px 17px 35px rgba(230, 230, 230,0.2),
-        5px 22px 60px rgba(230, 230, 230,0.4);
+        5px 5px 1px #919191;
     
     
 }
@@ -200,32 +191,40 @@ header::after:has(> .menuToggle > #hamburger-menu:checked) {
     transition: all 0.4s ease-in-out;
 }
 .menu > .ball1 {
-    background-color: rgb(205,148,207);
+    background-color: #66fcf1;
     border-radius: 50%;
     z-index: 2;
 }
 .menu > .ball2 {
-    background-color: rgb(199,84,203);
+    background-color: #1f2833;
     border-radius: 50%;
     z-index: 3;
-    animation-delay: 0.5s;
+    transition-delay: 0.2s;
 }
 .menu > .ball3 {
-    background-color: rgb(193, 21, 199);
+    background-color: #0b0c10;
     border-radius: 50%;
     z-index: 4;
-    animation-delay: 1s;
+    transition-delay: 0.4s;
 }
 
 #hamburger-menu:checked ~ .menu > .ball1 {
     width: 600vw;
     height: 300vh;
 }
+#hamburger-menu:checked ~ .menu > .ball2 {
+    width: 300vw;
+    height: 175vh;
+}
+#hamburger-menu:checked ~ .menu > .ball3 {
+    width: 250vw;
+    height: 125vh;
+}
 
 .menu nav {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 50%;
     margin: 1em;
     z-index: 5;
     
@@ -238,20 +237,9 @@ header::after:has(> .menuToggle > #hamburger-menu:checked) {
     list-style: none;
 }
 .menuToggle .menu nav ul * {
-    padding: 0.5em 1em;
 }
 .menuToggle .menu nav ul li a {
     color: white;
-}
-
-.grey-line {
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(94, 94, 94);
 }
 
 
@@ -264,6 +252,48 @@ header::after:has(> .menuToggle > #hamburger-menu:checked) {
 .small-about-me {
     padding: 2em;
 }
+
+/* === button ================================================= */
+.buttons {
+    margin-bottom: 2em;
+}
+
+.bn39 {
+    background-image: linear-gradient(135deg, #9588e1, #ee86b8);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 6em;
+    z-index: 2;
+    margin: 0 0.5em;
+}
+  
+.bn39:hover {
+    color: #fff;
+}
+  
+.bn39 .bn39span {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+  
+.bn39:hover .bn39span {
+    background: transparent;
+}
+/* ============================================================== */
 
 .my-photo {
     width: 100%;
