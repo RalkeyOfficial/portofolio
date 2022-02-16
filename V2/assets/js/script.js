@@ -18,4 +18,4 @@ function getAge(dateString) {
     return age;
 }
 
-$("#age").text(getAge("2003/10/03"));
+$("#age").text(`${getAge("2003/10/03")} year old `);

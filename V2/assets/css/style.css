@@ -33,7 +33,8 @@
 
 :root {
     --hamburger-color: white;
-    --hamburger-phase2-color: #1E1E1E;
+    /* --hamburger-phase2-color: #1E1E1E; */
+    --hamburger-phase2-color: white;
 }
 
 * {
@@ -60,17 +61,31 @@ header {
     left: 0;
     z-index: 1;
     padding: 1em;
-    background-color: #1E1E1E;
+    background-color: #111111;
 }
-header::after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgb(128,128,128);
+header::after:has(> .menuToggle > #hamburger-menu:checked) {
+    display: none;
+}
+
+.user-logo {
+    text-transform: uppercase;
+    font-size: 1.5em;
+
+    /* 3d text effect */
+    text-shadow: 
+    /* 3d effect part. add more and increment second property for longer 3d effect */
+        1px 1px 1px #919191,
+        2px 2px 1px #919191,
+        3px 3px 1px #919191,
+        4px 4px 1px #919191,
+        5px 5px 1px #919191,
+    /* blur effect. change second property for vertical alignment */
+        5px 10px 6px rgba(230, 230, 230, 0.4),
+        5px 14px 10px rgba(230, 230, 230,0.2),
+        5px 17px 35px rgba(230, 230, 230,0.2),
+        5px 22px 60px rgba(230, 230, 230,0.4);
+    
+    
 }
 
 /* 
@@ -79,7 +94,7 @@ header::after {
     =============================
 */
 .menuToggle {
-    margin: 0.5em 0.5em 0 auto;
+    margin: 0 0.5em 0 auto;
 }
 
 #hamburger-menu {
@@ -92,7 +107,6 @@ header::after {
     position: absolute;
     z-index: 4;
     cursor: pointer;
-    transform: translate(-100%, 20%);
 }
 
 #hamburger-menu + label#menu-visual {
@@ -143,53 +157,6 @@ header::after {
     left: 5px;
 }
 
-#hamburger-menu ~ .balls {
-    position: absolute;
-    transform: translateY(-75%);
-}
-.balls > * {
-    position: fixed;
-    top: 10vh;
-    right: 0;
-    transform: translate(50%, -50%);
-    width: 0;
-    height: 0;
-    transition: all 0.2s ease-in-out;
-}
-.balls > .ball1 {
-    position: fixed;
-    top: 10vh;
-    right: 0;
-    background-color: rgb(205,148,207);
-    border-radius: 50%;
-    z-index: 5;
-}
-.balls > .ball2 {
-    background-color: rgb(199,84,203);
-    border-radius: 50%;
-    z-index: 6;
-}
-.balls > .ball3 {
-    background-color: rgb(193, 21, 199);
-    border-radius: 50%;
-    z-index: 7;
-}
-
-#hamburger-menu:checked ~ .balls > .ball1 {
-    width: 200vw;
-    height: 200vh;
-}
-
-.menuToggle nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 1em;
-    z-index: 2;
-    
-    transform-origin: right;
-    transition: all 0.5s ease-in-out;
-}
 
 /* 
     the "+" thing in css goes through the html like a folder
@@ -198,21 +165,93 @@ header::after {
         +
         label 
         +
-        nav
-    to avoid using "+" too much i can use "~" to quicly get the next nav
+        .menu
+    to avoid using "+" too much i can use "~" to quicly get the .menu
 */
-#hamburger-menu:checked ~ nav {
-    
+
+#hamburger-menu ~ .menu {
+    position: absolute;
+    right: 0;   
+    width: 0;
+    height: 0;
+}
+#hamburger-menu:checked ~ .menu {
+    width: 100vw;
+    height: 100vh;
 }
 
-.menuToggle nav ul {
+#hamburger-menu ~ .menu nav {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-in-out;
+}
+#hamburger-menu:checked ~ .menu nav {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu > div {
+    position: fixed;
+    top: 12vh;
+    right: 0px;
+    transform: translate(50%, -50%);
+    width: 0;
+    height: 0;
+    transition: all 0.4s ease-in-out;
+}
+.menu > .ball1 {
+    background-color: rgb(205,148,207);
+    border-radius: 50%;
+    z-index: 2;
+}
+.menu > .ball2 {
+    background-color: rgb(199,84,203);
+    border-radius: 50%;
+    z-index: 3;
+    animation-delay: 0.5s;
+}
+.menu > .ball3 {
+    background-color: rgb(193, 21, 199);
+    border-radius: 50%;
+    z-index: 4;
+    animation-delay: 1s;
+}
+
+#hamburger-menu:checked ~ .menu > .ball1 {
+    width: 600vw;
+    height: 300vh;
+}
+
+.menu nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    z-index: 5;
+    
+    transform-origin: right;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.menuToggle .menu nav ul {
     list-style: none;
 }
-.menuToggle nav ul * {
+.menuToggle .menu nav ul * {
     padding: 0.5em 1em;
 }
-.menuToggle nav ul li a {
+.menuToggle .menu nav ul li a {
     color: white;
+}
+
+.grey-line {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(94, 94, 94);
 }
 
 
