@@ -171,16 +171,6 @@ header {
     height: 100vh;
 }
 
-#hamburger-menu ~ .menu nav {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.2s ease-in-out;
-}
-#hamburger-menu:checked ~ .menu nav {
-    visibility: visible;
-    opacity: 1;
-}
-
 .menu > div {
     position: fixed;
     top: 12vh;
@@ -194,12 +184,13 @@ header {
     background-color: #66fcf1;
     border-radius: 50%;
     z-index: 2;
+    transition-delay: 0.4s;
 }
 .menu > .ball2 {
     background-color: #1f2833;
     border-radius: 50%;
     z-index: 3;
-    transition-delay: 0.2s;
+    transition-delay: 0.4s;
 }
 .menu > .ball3 {
     background-color: #0b0c10;
@@ -211,25 +202,35 @@ header {
 #hamburger-menu:checked ~ .menu > .ball1 {
     width: 600vw;
     height: 300vh;
+    transition-delay: 0s;
 }
 #hamburger-menu:checked ~ .menu > .ball2 {
     width: 300vw;
     height: 175vh;
+    transition-delay: 0.2s;
 }
 #hamburger-menu:checked ~ .menu > .ball3 {
     width: 250vw;
     height: 125vh;
+    transition-delay: 0.4s;
 }
 
 .menu nav {
     position: fixed;
-    top: 0;
-    right: 50%;
+    right: 0%;
+    top: 25%;
+
+    transform: translateX(100%);
+
     margin: 1em;
     z-index: 5;
-    
-    transform-origin: right;
-    transition: all 0.5s ease-in-out;
+
+    transition: all 0.6s cubic-bezier(.6,0,.4,1);
+    transition-delay: 0s;
+}
+#hamburger-menu:checked ~ .menu nav {
+    transition-delay: 0.5s;
+    right: 50%;
 }
 
 
@@ -237,6 +238,7 @@ header {
     list-style: none;
 }
 .menuToggle .menu nav ul * {
+    padding-bottom: 1em;
 }
 .menuToggle .menu nav ul li a {
     color: white;
