@@ -26,11 +26,20 @@
         </p>
     </noscript>
 
-    <header class="flex-row">
+    <header class="flex-row flex-ver-center">
         <div class="user-logo">
             <h1>Thijn</h1>
         </div>
-        <div class="menuToggle flex-ver-center">
+        <div class="desktopHeader">
+            <nav>
+                <ul>
+                    <li><h2><a href="../home">home</a></h2></li>
+                    <li><h2><a href="../projects">projects</a></h2></li>
+                    <li><h2><a href="../contact">contact</a></h2></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobileHeader">
             <input type="checkbox" name="hamburger-menu" id="hamburger-menu">
             <label for="" id="menu-visual"></label>
             <label for="hamburger-menu" id="menu-button"></label>
@@ -53,31 +62,34 @@
     </header>
 
     <div class="content flex-hor-center flex-ver-center">
-        <div class="small-about-me">
-            <h1>Hi, I'm Thijn, </h1>
-            <p>
-                <!-- Hello world! I'm Thijn Douwma. I study software developer at ROC van Flevoland, currently learning everything full-stack related. -->
-                Student Software Developer at ROC van Flevoland
-                Fullstack developer with a passion for javascript.
-            </p>
-            <div id="holder" class="text tt-holder">
-                <p class="tt">I love CODING</p>
-                <p class="tt">I love GAMING</p>
-                <p class="tt">I love ANIME</p>
-                <p class="tt">I love COMPUTERS</p>
-                <p class="tt">I love TECHNOLOGY</p>
-                <p class="tt">I love YOU ❤</p>
-                <h3 class="ttt" id="target"></h3>
+        <div class="section1">
+            <div class="small-about-me">
+                <h1>Hi, I'm Thijn, </h1>
+                <p>
+                    Student Software Developer at ROC van Flevoland
+                    Fullstack developer with a passion for javascript.
+                </p>
+                <div id="holder" class="text tt-holder">
+                    <p class="tt">I love CODING</p>
+                    <p class="tt">I love GAMING</p>
+                    <p class="tt">I love ANIME</p>
+                    <p class="tt">I love COMPUTERS</p>
+                    <p class="tt">I love TECHNOLOGY</p>
+                    <p class="tt">I love YOU :)</p>
+                    <p class="ttt" id="target"></p>
+                </div>
+            </div>
+
+            <div class="buttons flex-row">
+                <a class="bn39" target="_blank" href="https://github.com/RalkeyOfficial"><span class="bn39span">GITHUB</span></a> 
+                <a class="bn39" target="_blank" href="/"><span class="bn39span">LINKEDIN</span></a>
             </div>
         </div>
 
-        <div class="buttons flex-row">
-            <a class="bn39" target="_blank" href="https://github.com/RalkeyOfficial"><span class="bn39span">GITHUB</span></a> 
-            <a class="bn39" target="_blank" href="/"><span class="bn39span">LINKEDIN</span></a>
-        </div>
-
-        <div class="my-photo">
-            <img src="../assets/images/Portrait_Placeholder.png" alt="">
+        <div class="section2">
+            <div class="my-photo">
+                <img src="../assets/images/Portrait_Placeholder.png" alt="">
+            </div>
         </div>
     </div>
       

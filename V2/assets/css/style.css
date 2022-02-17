@@ -49,7 +49,7 @@ body {
     height: 100%;
     color: white;
     background-color: #1E1E1E;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -75,16 +75,61 @@ header {
         3px 3px 1px #919191,
         4px 4px 1px #919191,
         5px 5px 1px #919191;
-    
-    
 }
 
-/* 
+.rainbow{
+    animation: colorRotate 1s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+    from {
+        text-shadow: 
+            1px 1px 1px #6666ff,
+            2px 2px 1px #6666ff,
+            3px 3px 1px #6666ff,
+            4px 4px 1px #6666ff,
+            5px 5px 1px #6666ff;
+    }
+    10% {
+        text-shadow: 
+            1px 1px 1px #0099ff,
+            2px 2px 1px #0099ff,
+            3px 3px 1px #0099ff,
+            4px 4px 1px #0099ff,
+            5px 5px 1px #0099ff;
+    }
+    50% {
+        text-shadow: 
+            1px 1px 1px #00ff00,
+            2px 2px 1px #00ff00,
+            3px 3px 1px #00ff00,
+            4px 4px 1px #00ff00,
+            5px 5px 1px #00ff00;
+    }
+    75% {
+        text-shadow: 
+            1px 1px 1px #ff3399,
+            2px 2px 1px #ff3399,
+            3px 3px 1px #ff3399,
+            4px 4px 1px #ff3399,
+            5px 5px 1px #ff3399;
+    }
+    100% {
+        text-shadow: 
+            1px 1px 1px #6666ff,
+            2px 2px 1px #6666ff,
+            3px 3px 1px #6666ff,
+            4px 4px 1px #6666ff,
+            5px 5px 1px #6666ff;
+    }
+  }
+
+/*
     =============================
-        Menu
+        Mobile header
     =============================
 */
-.menuToggle {
+.mobileHeader {
     margin: 0 0.5em 0 auto;
 }
 
@@ -147,18 +192,6 @@ header {
     transform: rotateZ(-45deg);
     left: 5px;
 }
-
-
-/* 
-    the "+" thing in css goes through the html like a folder
-    since my html is 
-        #hamburger-menu 
-        +
-        label 
-        +
-        .menu
-    to avoid using "+" too much i can use "~" to quicly get the .menu
-*/
 
 #hamburger-menu ~ .menu {
     position: absolute;
@@ -233,18 +266,68 @@ header {
     right: 50%;
 }
 
-
-.menuToggle .menu nav ul {
+.mobileHeader .menu nav ul {
     list-style: none;
 }
-.menuToggle .menu nav ul * {
+.mobileHeader .menu nav ul * {
     padding-bottom: 1em;
 }
-.menuToggle .menu nav ul li a {
+.mobileHeader .menu nav ul li a {
     color: white;
 }
 
+/*
+    =============================
+        Desktop header
+    =============================
+*/
+.desktopHeader {
+    position: absolute;
+    right: 0;
+}
+.desktopHeader nav li {
+    display: inline-block;
+    margin-right: 1em;
+    transition: all 0.2s ease-in-out;
+    transform: translate(0, 0);
+}
+.desktopHeader nav li:hover {
+    transform: translate(-1px, -1px);
+}
+.desktopHeader nav li a {
+    color: white;
+    text-decoration: none;
+    text-shadow: none;
+    transition: all 0.2s ease-in-out;
+}
+.desktopHeader nav li a:hover {
+    text-shadow: 
+        1px 1px 1px #919191,
+        2px 2px 1px #919191,
+        3px 3px 1px #919191;
+}
 
+/*
+    =============================
+        header switcher
+    =============================
+*/
+@media screen and (max-width: 500px) {
+    .desktopHeader {
+        display: none;
+    }
+}
+@media screen and (min-width: 500px) {
+    .mobileHeader {
+        display: none;
+    }
+}
+
+/*
+    =============================
+        main content
+    =============================
+*/
 .content {
     height: 100%;
     padding: 1em;
@@ -252,12 +335,13 @@ header {
 }
 
 .small-about-me {
-    padding: 2em;
+    margin: 2em;
 }
 
 /* === button ================================================= */
 .buttons {
     margin-bottom: 2em;
+    justify-content: center;
 }
 
 .bn39 {
@@ -310,4 +394,19 @@ header {
     height: auto;
     border-radius: 24px;
     display: block;
+}
+
+@media screen and (min-width: 650px) {
+    .content {
+        flex-direction: row;
+    }
+
+    .buttons {
+        justify-content: left;
+        margin: 2em;
+    }
+
+    .bn39 {
+        margin: 0 1em 0 0;
+    }
 }

@@ -6,3 +6,21 @@ let animatetext = function () {
 };
 $(animatetext);
 
+const keys = 'awesome'.split('');
+const wordLength = keys.length;
+let currentWord = 0;
+
+$(document).keypress(function(e) {
+    if (e.keyCode !== keys[currentWord].charCodeAt(0)){
+        currentWord = 0;
+        return;
+    }
+
+    currentWord++;
+
+    if (currentWord === wordLength) {
+        $('.user-logo').toggleClass('rainbow');
+        currentWord = 0;
+    }
+});
+
