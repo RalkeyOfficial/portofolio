@@ -396,7 +396,7 @@ header {
     display: block;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 900px) {
     .content {
         flex-direction: row;
     }
