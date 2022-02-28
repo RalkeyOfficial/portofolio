@@ -286,6 +286,10 @@ header {
     position: absolute;
     right: 0;
 }
+.desktopHeader nav ul {
+    padding-left: 0;
+    margin-right: 1em;
+}
 .desktopHeader nav li {
     display: inline-block;
     margin-right: 1em;
