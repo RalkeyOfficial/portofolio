@@ -1,36 +1,4 @@
 
-@font-face {
-    font-family: "Brandon Grotesque Cond";
-    src: url("../font/BrandonGrotesqueCond-Regular.ttf") format("truetype");
-    src: url("../font/BrandonGrotesqueCond-Regular.woff") format("woff"),
-        url("../font/BrandonGrotesqueCond-Regular.woff2") format("woff2");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Brandon Grotesque Cond";
-    src: url("../font/BrandonGrotesqueCond-Thin.ttf") format("truetype");
-    src: url("../font/BrandonGrotesqueCond-Thin.woff") format("woff"),
-        url("../font/BrandonGrotesqueCond-Thin.woff2") format("woff2");
-    font-weight: thin;
-}
-
-@font-face {
-    font-family: "Brandon Grotesque Cond";
-    src: url("../font/BrandonGrotesqueCond-Light.ttf") format("truetype");
-    src: url("../font/BrandonGrotesqueCond-Light.woff") format("woff"),
-        url("../font/BrandonGrotesqueCond-Light.woff2") format("woff2");
-    font-weight: light;
-}
-
-@font-face {
-    font-family: "Brandon Grotesque Cond";
-    src: url("../font/BrandonGrotesqueCond-Bold.ttf") format("truetype");
-    src: url("../font/BrandonGrotesqueCond-Bold.woff") format("woff"),
-        url("../font/BrandonGrotesqueCond-Bold.woff2") format("woff2");
-    font-weight: bold;
-}
-
 :root {
     --hamburger-color: white;
     /* --hamburger-phase2-color: #1E1E1E; */
@@ -41,7 +9,6 @@
     margin: 0;
     z-index: 0;
     box-sizing: border-box;
-    font-family: "Brandon Grotesque Cond";
 }
 
 html,
@@ -50,7 +17,6 @@ body {
     color: white;
     background-color: #1E1E1E;
     font-size: 20px;
-    font-weight: bold;
 }
 
 header {
