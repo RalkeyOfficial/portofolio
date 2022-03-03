@@ -309,12 +309,12 @@ header {
     color: #ffffff;
     display: block;
     height: 50px;
-    font-size: 1.4em;
+    font-size: 1em;
     font-weight: 600;
     padding: 4px;
     position: relative;
     text-decoration: none;
-    width: 6em;
+    width: 7em;
     z-index: 2;
     margin: 0 0.5em;
 }

@@ -5,25 +5,29 @@
     =============================
 */
 .content {
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     padding: 1em;
-    flex-direction: column;
     text-align: center;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 24vh);
+    grid-gap:50px 30px;
+}
+.content > * {
+    background-color: red;
+    height: 100%;
 }
 
 
 
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 1000px) {
     .content {
-        flex-direction: row;
-    }
-
-    .buttons {
-        justify-content: left;
-        margin: 2em;
-    }
-
-    .bn39 {
-        margin: 0 1em 0 0;
+        grid-template-columns: repeat(2,24vw);
+        grid-template-rows: repeat(3,24vh);
     }
 }
